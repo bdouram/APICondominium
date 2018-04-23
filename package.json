@@ -1,5 +1,5 @@
 {
-  "name": "spa",
+  "name": "condominium",
   "version": "1.0.0",
   "description": "API Condominium",
   "main": "src/loader.js",
