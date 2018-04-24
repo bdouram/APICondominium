@@ -31,7 +31,7 @@ http://localhost:3000/api/condominium/apartament_block 	//Filtrando documentos p
 
 Para gerar um token, é necessário fazer uma request utilizando POST para:
 ```
-http://localhost:3000/api/signup 
+http://localhost:3000/oapi/signup 
 ```
 com os seguintes parâmetros (com valores de exemplo):
 
