@@ -12,6 +12,12 @@ No diretório, digite:
 ```
 npm install
 ```
+
+Para executar a API (modo de desenvolvedor), ainda no diretório, digite:
+```
+npm run dev
+```
+
 **Rotas adotadas**
 
 * Rotas abertas (sem necessidade de autenticação).
@@ -109,7 +115,3 @@ http://localhost:3000/api/condominium/apartament_block
 {"apartament":1,"block":1,"token":"..."}
 ```
 
-Para executar a API (modo de desenvolvedor) dentro do diretório digite:
-```
-npm run dev
-``
