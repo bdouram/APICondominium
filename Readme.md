@@ -108,3 +108,8 @@ http://localhost:3000/api/condominium/apartament_block
 
 {"apartament":1,"block":1,"token":"..."}
 ```
+
+Para executar (modo de desenvolvedor) dentro do diretório digite:
+```
+npm run dev
+``
