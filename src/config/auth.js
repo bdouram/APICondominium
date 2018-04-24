@@ -1,7 +1,9 @@
 const jwt = require('jsonwebtoken')
 const env = require('../.env')
+
+// Module responsible for filtering the token
+
 module.exports = (req, res, next) => {
-    // CORS preflight request
     if (req.method === 'OPTIONS') {
         next()
     } else {

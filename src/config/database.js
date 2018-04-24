@@ -1,4 +1,7 @@
 const mongoose = require('mongoose')
+
+// Configuring the mongoose errors.
+
 mongoose.Promise = global.Promise
 module.exports = mongoose.connect('mongodb://localhost/condominium')
 

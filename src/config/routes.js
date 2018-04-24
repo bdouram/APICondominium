@@ -5,7 +5,7 @@ module.exports = (server) => {
 
     /*
         Protected Routes
-    */ 
+    */
     const protectedApi = express.Router()
     server.use('/api', protectedApi)
     protectedApi.use(auth)
@@ -16,7 +16,7 @@ module.exports = (server) => {
 
     /*
         Open Routes
-    */ 
+    */
     const openApi = express.Router()
     server.use('/oapi', openApi)
     const AuthService = require('../api/user/authService')

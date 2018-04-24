@@ -5,6 +5,8 @@ const server = express()
 const allowCors = require('./cors')
 const queryParser = require('express-query-int')
 
+// Configuring server, using express framework.
+
 server.use(bodyParser.urlencoded({extended:true}))
 server.use(bodyParser.json())
 server.use(queryParser())

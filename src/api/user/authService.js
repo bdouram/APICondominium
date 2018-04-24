@@ -44,7 +44,7 @@ const signup = (req, res, next) => {
     const password = req.body.password || ''
     const confirmPassword = req.body.confirm_password || ''
     if (!email.match(emailRegex)) {
-        return res.status(400).send({ errors: ['O e-mail informa está inválido'] })
+        return res.status(400).send({ errors: ['O e-mail informado está inválido'] })
     }
     if (!password.match(passwordRegex)) {
         return res.status(400).send({
