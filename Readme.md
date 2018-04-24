@@ -26,7 +26,7 @@ http://localhost:3000/api/condominium 			// Capturando todos os documentos da co
 http://localhost:3000/api/condominium/name 		// Filtrando por nome do residente.
 http://localhost:3000/api/condominium/block 		//Filtrando documentos por bloco
 http://localhost:3000/api/condominium/apartament 	//Filtrando documentos por apartamento
-http://localhost:3000/api/condominium/Apartament&Block 	//Filtrando documentos por um bloco e um apartamento
+http://localhost:3000/api/condominium/apartament_block 	//Filtrando documentos por um bloco e um apartamento
 ```
 
 Para gerar um token, é necessário fazer uma request utilizando POST para:
