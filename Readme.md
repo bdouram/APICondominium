@@ -22,11 +22,11 @@ http://localhost:3000/oapi/validateToken
 ```
 * Rotas fechadas (necessidade de autenticação).
 ```
-http://localhost:3000/api/condominium // Capturando todos os documentos da coleção.
-http://localhost:3000/api/name // Filtrando por nome do residente.
-http://localhost:3000/api/block //Filtrando documentos por bloco
-http://localhost:3000/api/apartament //Filtrando documentos por apartamento
-http://localhost:3000/api/Apartament&Block //Filtrando documentos por um bloco e um apartamento
+http://localhost:3000/api/condominium 			// Capturando todos os documentos da coleção.
+http://localhost:3000/api/condominium/name 		// Filtrando por nome do residente.
+http://localhost:3000/api/condominium/block 		//Filtrando documentos por bloco
+http://localhost:3000/api/condominium/apartament 	//Filtrando documentos por apartamento
+http://localhost:3000/api/condominium/Apartament&Block 	//Filtrando documentos por um bloco e um apartamento
 ```
 
 Para gerar um token, é necessário fazer uma request utilizando POST para:
