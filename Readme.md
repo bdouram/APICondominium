@@ -43,7 +43,7 @@ com os seguintes parâmetros (com valores de exemplo):
 	"email":"teste1@teste1.br"
 }
 ```
-Todos devem ser do tipo string e a senha deve ter uma letra maiúscula, uma letra minúscula, um número, uma caractere especial(@#$ %) e tamanho entre 6 - 20.
+Todos os passwords devem ser do tipo string e a senha deve ter uma letra maiúscula, uma letra minúscula, um número, uma caractere especial(@#$ %) e tamanho entre 6 - 20.
 
 Após o POST, o seguinte resultado é gerado:
 
