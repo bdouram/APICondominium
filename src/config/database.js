@@ -1,10 +1,21 @@
-const mongoose = require('mongoose')
+import mongoose from 'mongoose'; 
+import ENV from '../.env';
+import { errors } from '../constants';
+ 
+/*
+  Configuring the mongoose errors and setting database config.
+*/
 
-// Configuring the mongoose errors.
+const config = () => {
+    const configuredDatabase = mongoose;
+    configuredDatabase.Promise = global.Promise;
+    configuredDatabase.Error.messages.general.required = errors.required;
+    configuredDatabase.Error.messages.Number.min = errors.min;
+    configuredDatabase.Error.messages.Number.max = errors.max;
+    configuredDatabase.connect(`mongodb://${ENV.hostDatabase}/${ENV.database}`, { useNewUrlParser: true });
+    return configuredDatabase;
+};
 
-mongoose.Promise = global.Promise
-module.exports = mongoose.connect('mongodb://localhost/condominium')
+const connection = config();
 
-mongoose.Error.messages.general.required = "'{PATH}' attribute is required."
-mongoose.Error.messages.Number.min = "The value '{VALUE}' is less then min value '{MIN}'."
-mongoose.Error.messages.Number.max = "The value '{VALUE}' is greather than the upper limit '{MAX}'."
+export default connection;
