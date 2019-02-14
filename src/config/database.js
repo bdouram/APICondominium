@@ -14,9 +14,10 @@ const config = () => {
   configuredDatabase.Error.messages.Number.max = errors.max;
   configuredDatabase.set('useCreateIndex', true)
   configuredDatabase.connect(`mongodb://${ENV.hostDatabase}/${ENV.database}`, { useNewUrlParser: true });
-  return configuredDatabase;
 };
 
-const connection = config();
+const connection = () =>  {
+  config();
+}
 
 export default connection;

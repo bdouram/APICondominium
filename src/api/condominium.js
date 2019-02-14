@@ -1,24 +1,50 @@
-const restful = require('node-restful')
-const mongoose = restful.mongoose
+import restful from 'node-restful';
 
-const residentModel = {
-    name: { type: String, required: true },
-    email: { type: String, required: true }
-}
+const mongoose = restful.mongoose;
 
-const docummentsModel = {
-    cpf: { type: Number, required: false },
-    rg: { type: Number, required: false },
-}
+const model = {
+    block: { 
+        type: Number, 
+        required: true, 
+        min: 1, 
+        max: 20, 
+    },
+    numberApartment: { 
+        type: Number, 
+        required: true, 
+        min: 1, 
+        max: 20, 
+    },
+    phone: { 
+        type: Number, 
+        required: false, 
+    },
+    documment: {
+        cpf: { 
+            type: Number, 
+            required: false, 
+        },
+        rg: { 
+            type: Number, 
+            required: false, 
+        },
+    },
+    resident: {
+        name: { 
+            type: String, 
+            required: true, 
+        },
+        email: { 
+            type: String, 
+            required: true, 
+        }
+    },
+};
 
-const apartmentSchema = new mongoose.Schema({
-    block: { type: Number, required: true, min: 1, max: 20 },
-    numberApartment: { type: Number, required: true, min: 1, max: 20 },
-    phone: { type: Number, required: false },
-    documment: docummentsModel,
-    resident: residentModel,
-}, { versionKey: false })
+const apartmentSchema = new mongoose.Schema(model, { versionKey: false });
 
 apartmentSchema.index({ numberApartment: 1, block: 1 }, { unique: true });
 
-module.exports = restful.model('condominium', apartmentSchema)
+const condominiumModel = restful.model('condominium', apartmentSchema);
+
+export default condominiumModel;

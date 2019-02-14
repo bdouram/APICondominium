@@ -1,6 +1,6 @@
-const _ = require('lodash')
+import _ from 'lodash';
 
-module.exports = (req, res, next) => {
+export default (req, res, next) => {
     const bundle = res.locals.bundle
     if (bundle.errors) {
         const errors = parseErrors(bundle.errors)

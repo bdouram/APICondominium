@@ -1,9 +1,10 @@
-const port = 3000
-const bodyParser = require('body-parser')
-const express = require('express')
-const server = express()
-const allowCors = require('./cors')
-const queryParser = require('express-query-int')
+import bodyParser from 'body-parser';
+import express from 'express';
+import allowCors from './cors';
+import queryParser from 'express-query-int';
+import { port } from '../constants';
+
+const server = express();
 
 // Configuring server, using express framework.
 
@@ -16,4 +17,4 @@ server.listen(port,()=>{
     console.log(`API is running on port ${port}.`)
 })
 
-module.exports = server
+export default server;

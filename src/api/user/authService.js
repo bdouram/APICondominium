@@ -1,11 +1,10 @@
-const _ = require('lodash')
-const jwt = require('jsonwebtoken')
-const bcrypt = require('bcrypt')
-const User = require('./user')
-const env = require('../../.env')
+import _ from 'lodash';
+import jwt from 'jsonwebtoken';
+import bcrypt from 'bcrypt';
+import User from './user';
+import env from '../../.env';
+import { emailRegex, passwordRegex } from '../../constants';
 
-const emailRegex = /\S+@\S+\.\S+/
-const passwordRegex = /((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{6,20})/
 
 const sendErrorsFromDB = (res, dbErrors) => {
     const errors = []
@@ -20,7 +19,7 @@ const login = (req, res, next) => {
         if (err) {
             return sendErrorsFromDB(res, err)
         } else if (user && bcrypt.compareSync(password, user.password)) {
-            const token = jwt.sign(user, env.authSecret, {
+            const token = jwt.sign(user.toJSON(), env.authSecret, {
                 expiresIn: "1 day"
             })
             const { name, email } = user
@@ -77,4 +76,4 @@ const signup = (req, res, next) => {
     })
 }
 
-module.exports = { login, signup, validateToken }
+export default { login, signup, validateToken };
