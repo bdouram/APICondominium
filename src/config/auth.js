@@ -1,9 +1,9 @@
-const jwt = require('jsonwebtoken')
-const env = require('../.env')
+import jwt from 'jsonwebtoken';
+import env from '../.env';
 
 // Module responsible for filtering the token
 
-module.exports = (req, res, next) => {
+export default (req, res, next) => {
     if (req.method === 'OPTIONS') {
         next()
     } else {
